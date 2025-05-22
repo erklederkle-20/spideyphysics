@@ -20,24 +20,27 @@
       font-family: 'Roboto', sans-serif;
       background: #0a0a0a;
       color: #fff;
-      overflow-x: hidden;
+      overflow-x: hidden; /* Prevent horizontal scroll */
     }
 
     header {
       background: linear-gradient(135deg, #1a1a1a, #000);
       background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
-      padding: 100px 20px;
+      padding: 100px 10px; /* Reduced side padding to 10px for mobile */
       text-align: center;
+      /* Added flex centering to fix any alignment issues */
+      display: flex;
+      justify-content: center;
     }
   
     /* Container for header content, centers with padding */
     .header-content {
       max-width: 640px;
-      margin: 0 auto;
-      padding: 0 20px;
-      text-align: center;
-      /* Added this so on small screens width is 100% max-width or less */
       width: 100%;
+      padding: 0 10px; /* Consistent small horizontal padding */
+      text-align: center;
+      /* Fix for mobile centering */
+      display: inline-block;
     }
 
     header h1 {
@@ -45,9 +48,10 @@
       font-size: 3rem;
       color: #e62429;
       margin: 0;
-      white-space: nowrap;
-      max-width: 100%;
-      word-wrap: break-word;
+      white-space: nowrap; /* Prevent line breaks */
+      overflow: visible; /* Ensure no clipping */
+      text-align: center;
+      /* No max-width needed here */
     }
 
     header p {
@@ -128,7 +132,7 @@
     /* Responsive adjustments for small screens */
     @media (max-width: 400px) {
       header {
-        padding: 80px 10px;
+        padding: 80px 5px; /* smaller horizontal padding */
       }
 
       header h1 {
@@ -141,7 +145,7 @@
       }
 
       .header-content {
-        padding: 0 10px;
+        padding: 0 5px; /* small padding */
       }
     }
   </style>
