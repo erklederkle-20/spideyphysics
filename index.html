@@ -6,6 +6,11 @@
   <title>SpideyPhysics Tutoring</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&display=swap" rel="stylesheet" />
   <style>
+    /* Make padding included in width */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     html {
       scroll-behavior: smooth;
     }
@@ -19,29 +24,36 @@
     }
 
     header {
-      text-align: center;
-      padding: 100px 20px;
       background: linear-gradient(135deg, #1a1a1a, #000);
       background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+      padding: 100px 20px;
+      text-align: center;
     }
   
+    /* Container for header content, centers with padding */
     .header-content {
       max-width: 640px;
       margin: 0 auto;
       padding: 0 20px;
       text-align: center;
+      /* Added this so on small screens width is 100% max-width or less */
+      width: 100%;
     }
 
     header h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 3rem;
       color: #e62429;
+      margin: 0;
+      /* Responsive font sizing */
+      max-width: 100%;
+      word-wrap: break-word;
     }
 
     header p {
       font-size: 1.2rem;
       max-width: 600px;
-      margin: 20px auto;
+      margin: 20px auto 0;
       color: #ccc;
     }
 
@@ -112,8 +124,27 @@
       animation: floatEquations 30s linear infinite;
       pointer-events: none;
     }
+
+    /* Responsive adjustments for small screens */
+    @media (max-width: 400px) {
+      header {
+        padding: 80px 10px;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      header p {
+        font-size: 1rem;
+        max-width: 100%;
+      }
+
+      .header-content {
+        padding: 0 10px;
+      }
+    }
   </style>
-  
 </head>
 <body>
   <header>
@@ -123,7 +154,6 @@
       <a href="#meeting-form" class="cta-button">🎯 Schedule a Free Meeting</a>
     </div>
   </header>
-
 
   <section>
     <h2>🎥 Featured Videos from SpideyPhysics</h2>
