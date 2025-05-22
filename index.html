@@ -7,7 +7,6 @@
   <link rel="icon" href="SpideyLogo.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&display=swap" rel="stylesheet" />
   <style>
-    /* Make padding included in width */
     *, *::before, *::after {
       box-sizing: border-box;
     }
@@ -21,26 +20,62 @@
       font-family: 'Roboto', sans-serif;
       background: #0a0a0a;
       color: #fff;
-      overflow-x: hidden; /* Prevent horizontal scroll */
+      overflow-x: hidden;
+    }
+
+    /* === Sticky Top Nav === */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #0a0a0a;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #222;
+    }
+
+    .logo {
+      height: 40px;
+      width: auto;
+    }
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .cta-top {
+      background: #e62429;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .cta-top:hover {
+      background: #ff3b3b;
     }
 
     header {
       background: linear-gradient(135deg, #1a1a1a, #000);
       background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
-      padding: 100px 10px; /* Reduced side padding to 10px for mobile */
+      padding: 100px 10px;
       text-align: center;
-      /* Added flex centering to fix any alignment issues */
       display: flex;
       justify-content: center;
     }
-  
-    /* Container for header content, centers with padding */
+
     .header-content {
       max-width: 640px;
       width: 100%;
-      padding: 0 10px; /* Consistent small horizontal padding */
+      padding: 0 10px;
       text-align: center;
-      /* Fix for mobile centering */
       display: inline-block;
     }
 
@@ -49,10 +84,7 @@
       font-size: 3rem;
       color: #e62429;
       margin: 0;
-      white-space: nowrap; /* Prevent line breaks */
-      overflow: visible; /* Ensure no clipping */
-      text-align: center;
-      /* No max-width needed here */
+      white-space: nowrap;
     }
 
     header p {
@@ -130,10 +162,9 @@
       pointer-events: none;
     }
 
-    /* Responsive adjustments for small screens */
-    @media (max-width: 400px) {
+    @media (max-width: 600px) {
       header {
-        padding: 80px 5px; /* smaller horizontal padding */
+        padding: 80px 5px;
       }
 
       header h1 {
@@ -146,13 +177,30 @@
       }
 
       .header-content {
-        padding: 0 5px; /* small padding */
+        padding: 0 5px;
+      }
+
+      .cta-top {
+        font-size: 0.8rem;
+        padding: 8px 14px;
+      }
+
+      .logo {
+        height: 30px;
       }
     }
   </style>
 </head>
 <body>
-  <header>
+  <!-- Sticky Nav Bar with Logo and CTA -->
+  <nav class="top-bar">
+    <a href="#top" class="logo-link">
+      <img src="MainSpideyLogo.png" alt="SpideyPhysics Logo" class="logo">
+    </a>
+    <a href="#meeting-form" class="cta-top">🎯 Book a Meeting</a>
+  </nav>
+
+  <header id="top">
     <div class="header-content">
       <h1>SpideyPhysics</h1>
       <p>Master Math & Physics with SpideyPrecision. Book a free meeting to untangle the concepts troubling you most.</p>
@@ -196,7 +244,6 @@
     © 2025 SpideyPhysics. Made with 🕷️ and passion for science.
   </footer>
 
-  <!-- Floating math equations -->
   <script>
     const symbols = ['E=mc²', 'F=ma', 'ΔV', '∫F·dx', 'v = u + at', 'x(t)', 'ψ(x)', 'ΣF', 'λ', 'hν', 'ΔxΔp ≥ ħ/2'];
     for (let i = 0; i < 30; i++) {
