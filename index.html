@@ -28,7 +28,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
+      padding: 1px 20px;
       background-color: rgba(0, 0, 0, 0.4); /* semi-transparent black */
       backdrop-filter: blur(8px); /* optional: adds frosted glass effect */
       position: sticky;
@@ -148,6 +148,30 @@
       color: #777;
     }
 
+    .download-pdf {
+  display: inline-block;
+  padding: 16px 24px;
+  margin: 20px auto;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(230, 36, 41, 0.3);
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.download-pdf:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 59, 59, 0.5);
+}
+
+
     @keyframes floatEquations {
       0% { transform: translateY(0) translateX(0); opacity: 0; }
       50% { opacity: 0.6; }
@@ -194,6 +218,7 @@
 </head>
 <body>
   <!-- Sticky Nav Bar with Logo and CTA -->
+  <div id="top" style="position: absolute; top: 0;"></div>
   <nav class="top-bar">
     <a href="#top" class="logo-link">
       <img src="MainSpideyLogo.png" alt="SpideyPhysics Logo" class="logo">
@@ -201,7 +226,7 @@
     <a href="#meeting-form" class="cta-top">🎯 Book a Meeting</a>
   </nav>
 
-  <header id="top">
+  <header>
     <div class="header-content">
       <h1>SpideyPhysics</h1>
       <p>Master Math & Physics with SpideyPrecision. Book a free meeting to untangle the concepts troubling you most.</p>
@@ -250,6 +275,22 @@
     </div>
     <a href="https://youtube.com/@spideyphysics?si=jOhH6f18vpEF0xps" target="_blank" class="cta-button">Visit My YouTube Channel</a>
   </section>
+
+  <section>
+  <h2>📄 Downloadable Study Guides</h2>
+  <ul style="list-style: none; padding-left: 0; font-size: 1.1rem; line-height: 2;">
+    <div style="text-align: center; margin-bottom: 1.5rem;">
+      <a href="How_to_Understand_Any_Physics_Equation.pdf" target="_blank" class="download-pdf">
+        🌀 Download: How to Understand Any Physics Equation – Case Study: Newton's Second Law
+      </a>
+    </div>
+    <!-- Add more PDF links here if needed -->
+  </ul>
+  <p style="text-align: center; margin-top: 1.5rem;">
+    <em>More free guides coming soon – stay tuned!</em>
+  </p>
+</section>
+
 
   <section id="meeting-form">
     <h2>🗓️ Schedule a Free Meeting</h2>
