@@ -1,0 +1,33 @@
+<nav class="top-bar">
+  <a href="index.html" class="logo-link">
+    <img src="MainSpideyLogo.png" alt="SpideyPhysics Logo" class="logo" />
+  </a>
+  <div class="dropdown">
+    <button class="dropbtn" id="menuButton">📂 Menu</button>
+    <div class="dropdown-content" id="menuContent">
+      <a href="physics.html">📚 Physics Education</a>
+      <a href="youtube.html">🎥 YouTube Videos</a>
+      <a href="pdfs.html">📄 PDF Library</a>
+      <a href="about.html">👤 About Me</a>
+      <a href="index.html#meeting-form">🗓️ Book a Meeting</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const menuButton = document.getElementById("menuButton");
+  const menuContent = document.getElementById("menuContent");
+
+  menuButton.addEventListener("click", function(event) {
+    event.stopPropagation();
+    menuContent.classList.toggle("show");
+  });
+
+  document.addEventListener("click", function(event) {
+    if (!event.target.closest(".dropdown")) {
+      menuContent.classList.remove("show");
+    }
+  });
+});
+</script>
