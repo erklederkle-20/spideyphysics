@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YouTube Channel – SpideyPhysics</title>
+  <link rel="icon" href="SpideyLogo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="navbar"></div>
+<script>
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar').innerHTML = data;
+
+      // Enable menu toggle after navbar loads
+      const menuButton = document.getElementById("menuButton");
+      const menuContent = document.getElementById("menuContent");
+
+      if (menuButton && menuContent) {
+        menuButton.addEventListener("click", function(event) {
+          event.stopPropagation();
+          menuContent.classList.toggle("show");
+        });
+
+        document.addEventListener("click", function(event) {
+          if (!event.target.closest(".dropdown")) {
+            menuContent.classList.remove("show");
+          }
+        });
+      }
+    });
+</script>
+
+<!-- Page Header -->
+<header class="simple-header">
+  <h1>🎥 SpideyPhysics on YouTube</h1>
+  <p>
+    SpideyPhysics is my YouTube channel dedicated to making the complex world of physics and mathematics approachable and engaging.
+    Explore curated playlists created while teaching at university and during my own independent studies.
+  </p>
+</header>
+
+<!-- Playlists Section -->
+<section>
+  <h2>📚 Playlists</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+
+    <a href="https://youtube.com/playlist?list=PLF-0na18kxRyBVEKxGXBvq3dHYY5FH6kD&si=FcWIkkzSDsCrTOf-" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="background:#111; padding:20px; border-radius:10px; text-align:center; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        <h3 style="color:#e62429;">Electromagnetism</h3>
+        <p>Dive into Maxwell’s equations, electric fields, magnetic forces, and more.</p>
+      </div>
+    </a>
+
+    <a href="https://youtube.com/playlist?list=PLF-0na18kxRy-9NOsWxUFzLaUBh_aoSYk&si=XRNq_6uMfADW1eyc" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="background:#111; padding:20px; border-radius:10px; text-align:center; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        <h3 style="color:#e62429;">Optics</h3>
+        <p>Learn about light, lenses, wave optics, and optical instruments.</p>
+      </div>
+    </a>
+
+    <a href="https://youtube.com/playlist?list=PLF-0na18kxRwLStMSQF9zJniOOsaTk2Wi&si=2SSnFsMoKXBCtEUl" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="background:#111; padding:20px; border-radius:10px; text-align:center; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        <h3 style="color:#e62429;">Modern Physics</h3>
+        <p>Explore relativity, quantum mechanics, atomic structure, and beyond.</p>
+      </div>
+    </a>
+
+    <a href="https://youtube.com/playlist?list=PLF-0na18kxRwAiSzuUlwZxC-Lzre4C_7r&si=ccl6GBEFqDdQ6GCr" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="background:#111; padding:20px; border-radius:10px; text-align:center; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        <h3 style="color:#e62429;">Me Reading Papers</h3>
+        <p>Join me as I read and explain interesting research papers in physics.</p>
+      </div>
+    </a>
+
+    <a href="https://youtube.com/playlist?list=PLF-0na18kxRyN-oFzVwayCf5cgstQ3iXd&si=v-Zu7FsEgr51fGFq" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="background:#111; padding:20px; border-radius:10px; text-align:center; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        <h3 style="color:#e62429;">Math from the Ground Up</h3>
+        <p>A foundational series covering core math concepts step-by-step.</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- Featured Videos -->
+<section>
+  <h2>🌟 Featured Videos</h2>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/X2O5LileZiw" allowfullscreen></iframe>
+  </div>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/NNNeTw1kK3A" allowfullscreen></iframe>
+  </div>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/kZPZwODgiQY" allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- Random Videos -->
+<section>
+  <h2>🎲 Random Videos</h2>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/PKhBCD30jFQ" allowfullscreen></iframe>
+  </div>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/95ggZB3CU1g" allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  © 2025 SpideyPhysics. Made with 🕷️ and passion for science.
+</footer>
+
+</body>
+</html>
