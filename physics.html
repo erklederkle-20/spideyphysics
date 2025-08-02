@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Physics Education – SpideyPhysics</title>
+  <link rel="icon" href="SpideyLogo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="navbar"></div>
+<script>
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar').innerHTML = data;
+
+      // Enable menu toggle after navbar loads
+      const menuButton = document.getElementById("menuButton");
+      const menuContent = document.getElementById("menuContent");
+
+      if (menuButton && menuContent) {
+        menuButton.addEventListener("click", function(event) {
+          event.stopPropagation();
+          menuContent.classList.toggle("show");
+        });
+
+        document.addEventListener("click", function(event) {
+          if (!event.target.closest(".dropdown")) {
+            menuContent.classList.remove("show");
+          }
+        });
+      }
+    });
+</script>
+
+<!-- Page Header -->
+<header class="simple-header">
+  <h1>📚 Physics Education Hub</h1>
+  <p>
+    Welcome to the SpideyPhysics Education Hub — your free, structured pathway to learning physics from the ground up.
+    Explore the topics below for lessons, videos, historical context, and practice problems.
+  </p>
+</header>
+
+<!-- Category Grid -->
+<section>
+  <h2>🔍 Choose a Topic</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+
+    <a href="mechanics.html" style="text-decoration: none; color: inherit;">
+      <div style="background:#111; padding:20px; border-radius:10px; text-align:center; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        <h3 style="color:#e62429;">⚙️ Mechanics</h3>
+        <p>Motion, forces, energy, and the laws that govern them.</p>
+      </div>
+    </a>
+
+    <a href="electromagnetism.html" style="text-decoration: none; color: inherit;">
+      <div style="background:#111; padding:20px; border-radius:10px; text-align:center; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        <h3 style="color:#e62429;">⚡ Electromagnetism</h3>
+        <p>Electricity, magnetism, and the unifying Maxwell’s equations.</p>
+      </div>
+    </a>
+
+    <a href="waves_optics.html" style="text-decoration: none; color: inherit;">
+      <div style="background:#111; padding:20px; border-radius:10px; text-align:center; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        <h3 style="color:#e62429;">🌊 Waves & Optics</h3>
+        <p>Wave motion, sound, light, and optical systems.</p>
+      </div>
+    </a>
+
+    <a href="thermodynamics.html" style="text-decoration: none; color: inherit;">
+      <div style="background:#111; padding:20px; border-radius:10px; text-align:center; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        <h3 style="color:#e62429;">🔥 Thermodynamics</h3>
+        <p>Heat, energy transfer, and the laws of thermodynamics.</p>
+      </div>
+    </a>
+
+    <a href="modern_physics.html" style="text-decoration: none; color: inherit;">
+      <div style="background:#111; padding:20px; border-radius:10px; text-align:center; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        <h3 style="color:#e62429;">🔬 Modern Physics</h3>
+        <p>Relativity, quantum mechanics, and particle physics.</p>
+      </div>
+    </a>
+
+    <a href="math_tools.html" style="text-decoration: none; color: inherit;">
+      <div style="background:#111; padding:20px; border-radius:10px; text-align:center; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        <h3 style="color:#e62429;">📐 Math Tools for Physics</h3>
+        <p>Essential math skills for mastering physics concepts.</p>
+      </div>
+    </a>
+
+    <a href="history_of_physics.html" style="text-decoration: none; color: inherit;">
+      <div style="background:#111; padding:20px; border-radius:10px; text-align:center; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        <h3 style="color:#e62429;">📜 History of Physics</h3>
+        <p>Key discoveries, scientists, and the evolution of physics.</p>
+      </div>
+    </a>
+
+    <a href="practice.html" style="text-decoration: none; color: inherit;">
+      <div style="background:#111; padding:20px; border-radius:10px; text-align:center; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        <h3 style="color:#e62429;">📝 Practice & Quizzes</h3>
+        <p>Test your knowledge with practice problems and quizzes.</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  © 2025 SpideyPhysics. Made with 🕷️ and passion for science.
+</footer>
+
+</body>
+</html>
